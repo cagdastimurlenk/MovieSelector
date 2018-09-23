@@ -16,24 +16,34 @@ class MovieListInteractor: MovieListBusinessLogic{
     var presenter: MovieListPresentationLogic?
     
     func getPopularMovieList(_ request: MovieList.Request) {
-        MovieApi.getPopularMovieList(request: request,
-                                          success:
-            {
-                [weak weakSelf = self] (response) in
-                weakSelf?.presenter?.presentMovieList(MovieList.Response(data: response))
-        })
+            MovieApi.getPopularMovieList(request: request,
+                                         success:
+                {
+                    [weak weakSelf = self] (response) in
+                    weakSelf?.presenter?.presentMovieList(MovieList.Response(data: response))
+            })
+        
     }
     func saveMovieToDatabase(movieViewModel: MovieList.ViewModel.MovieViewModel, withLike: Bool) {
-        let dto = MovieDTO()
-        dto.isLiked = String(withLike)
-        dto.movieId = movieViewModel.movieId
-        dto.voteAverage = movieViewModel.voteAverage
-        dto.releaseDate = movieViewModel.releaseDate
-        dto.posterPath = movieViewModel.posterPath
-        dto.overview = movieViewModel.overview
-        dto.title = movieViewModel.title
-        let movieStore = RealmStore<RealmMovie>()
-        movieStore.insert(item: dto)
+          let movieStore = RealmStore<RealmMovie>()
+//        only save if it s not added before
+        let movie = movieStore.getAll().filter { movie in
+            return movie.movieId == movieViewModel.movieId
+        }
+        if movie.count == 0
+        {
+            let dto = MovieDTO()
+            dto.isLiked = String(withLike)
+            dto.movieId = movieViewModel.movieId
+            dto.voteAverage = movieViewModel.voteAverage
+            dto.releaseDate = movieViewModel.releaseDate
+            dto.posterPath = movieViewModel.posterPath
+            dto.overview = movieViewModel.overview
+            dto.title = movieViewModel.title
+            
+            movieStore.insert(item: dto)
+
+        }
         
         //let a = movieStore.getAll()
     }

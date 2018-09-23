@@ -72,6 +72,7 @@ class MovieListViewController: UIViewController,MovieListDisplayLogic,MovieRoute
 
     func fetchPopularMovies()
     {
+        //MARK to add.also store what page you are in the userdfaults or realm, then chek if coming movies already swiped left or right so dont show them
         let request = MovieList.Request(page: currentPage)
         interactor?.getPopularMovieList(request)
         //buradan devam// request de API KEy ve diger zimbbirtilari alacak skeilde duzeltilmeli...

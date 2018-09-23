@@ -44,29 +44,41 @@ class MovieApi{
         }
     }
     
+    static func getPopularMovieListMock(request: MovieList.Request,
+                                    success successCallback: ((MovieListResponseDTO) -> Void)?,
+                                    error errorCallback: ((ErrorDTO) -> Void)? = nil,
+                                    failure failureCallback: (() -> Void)? = nil) {
+        
+                 let jsonURL = Bundle.main.url(forResource: "MovieData", withExtension: "json")!
+                do {
+                    let movieListResponseContent = try Data(contentsOf: jsonURL)
+                    let json = try JSONSerialization.jsonObject(with: movieListResponseContent, options: JSONSerialization.ReadingOptions.mutableContainers)
+        
+                    if let movieListResponse = Mapper<MovieListResponseDTO>().map(JSONObject: json)
+                    {
+                        successCallback?(movieListResponse)
+                    }
+                    else
+                    {
+                        failureCallback?()
+                    }
+                   //bunu MovieApiDataFromFile a tasiyacaz..
+                }
+                catch {
+                    failureCallback?()
+                }
+    }
+    
     static func getPopularMovieList(request: MovieList.Request,
                                    success successCallback: ((MovieListResponseDTO) -> Void)?,
                                    error errorCallback: ((ErrorDTO) -> Void)? = nil,
                                    failure failureCallback: (() -> Void)? = nil) {
         
-//         let jsonURL = Bundle.main.url(forResource: "MovieData", withExtension: "json")!
-//        do {
-//            let movieListResponseContent = try Data(contentsOf: jsonURL)
-//            let json = try JSONSerialization.jsonObject(with: movieListResponseContent, options: JSONSerialization.ReadingOptions.mutableContainers)
-//
-//            if let movieListResponse = Mapper<MovieListResponseDTO>().map(JSONObject: json)
-//            {
-//                successCallback?(movieListResponse)
-//            }
-//            else
-//            {
-//                failureCallback?()
-//            }
-//           //bunu MovieApiDataFromFile a tasiyacaz..
-//        }
-//        catch {
-//            failureCallback?()
-//        }
+        if request.page == -1
+        {
+            getPopularMovieListMock(request:request, success: successCallback , error: errorCallback, failure:failureCallback)
+            return
+        }
         
         NetworkAdapter.request(target: MultiTarget(MovieApiTarget.getPopularMovieList(request: request)), success: { (response) in
             do
@@ -88,13 +100,7 @@ class MovieApi{
             }
             
         }, error: { (error) in
-            //            let  json = try? error.mapString()
-            //            if json != nil{
-            //                let error = Mapper<ErrorDTO>().map(JSONString: json!)
-            //                errorCallback?(error!)
-            //            }else{
-            //                failureCallback?()
-            //            }
+    
         }) { (error) in
             failureCallback?()
         }

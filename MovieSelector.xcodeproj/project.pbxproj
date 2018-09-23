@@ -19,6 +19,9 @@
 		AC1D5E8C2156F95600F0C6F5 /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5E8A2156F95500F0C6F5 /* RealmStore.swift */; };
 		AC1D5E8D2156F95600F0C6F5 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5E8B2156F95500F0C6F5 /* RealmProvider.swift */; };
 		AC1D5E8F2156FB8300F0C6F5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5E8E2156FB8300F0C6F5 /* RealmMovie.swift */; };
+		AC1D5EA42158053800F0C6F5 /* MovieListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5EA02158053800F0C6F5 /* MovieListViewControllerTests.swift */; };
+		AC1D5EA52158053800F0C6F5 /* MovieListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5EA12158053800F0C6F5 /* MovieListInteractorTests.swift */; };
+		AC1D5EA72158053800F0C6F5 /* MovieListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D5EA32158053800F0C6F5 /* MovieListPresenterTests.swift */; };
 		AC75F17F2155614100635F90 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75F17E2155614100635F90 /* NetworkAdapter.swift */; };
 		AC75F1812155622900635F90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75F1802155622900635F90 /* Constants.swift */; };
 		ACCF00B02153F24300DDAB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF00AF2153F24300DDAB20 /* AppDelegate.swift */; };
@@ -85,6 +88,9 @@
 		AC1D5E8A2156F95500F0C6F5 /* RealmStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
 		AC1D5E8B2156F95500F0C6F5 /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		AC1D5E8E2156FB8300F0C6F5 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
+		AC1D5EA02158053800F0C6F5 /* MovieListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewControllerTests.swift; sourceTree = "<group>"; };
+		AC1D5EA12158053800F0C6F5 /* MovieListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractorTests.swift; sourceTree = "<group>"; };
+		AC1D5EA32158053800F0C6F5 /* MovieListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenterTests.swift; sourceTree = "<group>"; };
 		AC75F17E2155614100635F90 /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		AC75F1802155622900635F90 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACCF00AC2153F24300DDAB20 /* MovieSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +227,9 @@
 			children = (
 				ACCF00C42153F24400DDAB20 /* MovieSelectorTests.swift */,
 				ACCF00C62153F24400DDAB20 /* Info.plist */,
+				AC1D5EA02158053800F0C6F5 /* MovieListViewControllerTests.swift */,
+				AC1D5EA12158053800F0C6F5 /* MovieListInteractorTests.swift */,
+				AC1D5EA32158053800F0C6F5 /* MovieListPresenterTests.swift */,
 			);
 			path = MovieSelectorTests;
 			sourceTree = "<group>";
@@ -628,7 +637,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1D5EA52158053800F0C6F5 /* MovieListInteractorTests.swift in Sources */,
 				ACCF00C52153F24400DDAB20 /* MovieSelectorTests.swift in Sources */,
+				AC1D5EA72158053800F0C6F5 /* MovieListPresenterTests.swift in Sources */,
+				AC1D5EA42158053800F0C6F5 /* MovieListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
