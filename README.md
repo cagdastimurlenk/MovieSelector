@@ -13,3 +13,5 @@ You liked movies are stored in Realm Database for later use. You can navigate to
 
 This app gives you an idea of how to write clean code and some additional features
 Sample app to show all about Clean Swift, IOS architecture, Moya Networking, Animations, Card CollectionView, Realm Store Database 
+
+Also added some test files to demonstrate how to wirite test in clean swift
