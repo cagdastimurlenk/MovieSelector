@@ -2,7 +2,7 @@
 //  NetworkAdapter.swift
 //  DagitimMobil
 //
-//  Created by volkan biçer on 08/09/2017.
+//  Created by cagdas timurlenk on 08/09/2017.
 //  Copyright © 2017 EnerjiSA. All rights reserved.
 //
 
@@ -20,14 +20,12 @@ struct NetworkAdapter {
     
     
     static let networkActivityClosure: NetworkActivityPlugin.NetworkActivityClosure = {change in
-        #if AYEDAS || BASKENT || TOROSLAR
             switch change{
                 case .began:
                     UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 case .ended:
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
-        #endif
     }
     
     static func request(
