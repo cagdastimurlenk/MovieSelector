@@ -95,7 +95,7 @@ class MovieListViewControllerTests: XCTestCase
     sut.interactor?.getPopularMovieList(request)
     
     // Then
-    XCTAssertTrue(spy.hasData, "viewDidLoad() should ask the interactor to do something")
+    XCTAssertTrue(spy.hasData, "no data found!s")
   }
     
   
