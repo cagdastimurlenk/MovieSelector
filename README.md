@@ -2,7 +2,6 @@
 
 Sample app to show all about Clean Swift, IOS architecture, Moya Networking, Animations, Card CollectionView, Realm Store Database
 
-[![Build Status](https://travis-ci.org/vbicer/RealmStore.svg?branch=master)](https://travis-ci.org/vbicer/RealmStore)
 ![Language](https://img.shields.io/badge/languages-swift-orange.svg)
 
 Sample app to show how to create an IOS app from beginning using Clean Swift. Routing options are slightly different then original clean swift architecture, but less code is required.
